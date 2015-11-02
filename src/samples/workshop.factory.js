@@ -7,9 +7,11 @@
 
   function attendeesFactory() {
     return {
-      getAll: function() {
-        return ['Jana', 'Marc', 'Matthias', 'Linda'];
-      }
+      getAll: getAll
     };
+
+    function getAll() {
+      return ['Jana', 'Marc', 'Matthias', 'Linda'];
+    }
   }
 }());

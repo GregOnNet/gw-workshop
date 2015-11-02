@@ -33,7 +33,7 @@
 
         <table class="table table-striped">
           <tr ng-repeat="attendee in workshop.attendees
-                         | startsWith:query
+                         | filter:query
                          | orderBy:attendee:reverse">
             <td>{{ attendee }}</td>
           </tr>
