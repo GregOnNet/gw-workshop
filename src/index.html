@@ -1,69 +1,72 @@
-<html ng-app="workshop"
-      ng-strict-di>
-  <head>
-    <title>Learning AngularJS</title>
-    <link rel="icon" href="../favicon.ico">
-    <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="/styles/samples.css" rel="stylesheet">
+<html ng-app="workshop" ng-strict-di>
 
-    <!-- AngularJS -->
-    <script src="/bower_components/angular/angular.js"></script>
-  </head>
+<head>
+  <title>Learning AngularJS</title>
+  <link rel="icon" href="../favicon.ico">
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <link href="/styles/samples.css" rel="stylesheet">
 
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Sample</a>
-        </div>
-      </div>
-    </nav>
+  <!-- AngularJS -->
+  <script src="/bower_components/angular/angular.js"></script>
+</head>
 
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Sample</a>
+      </div>
+    </div>
+  </nav>
 
-      <!-- Our Code goes here -->
-      <section ng-controller="workshopController as workshop"
-               class="sample">
+  <div class="container">
 
-        <p>{{ workshop.test }}</p>
-        <p class="lead">{{ workshop.uppercasedName }}</p>
+    <!-- Our Code goes here -->
+    <section ng-controller="workshopController as workshop" class="sample">
 
-        <input ng-model="query" class="form-control">
-        <button ng-click="reverse=!reverse" class="btn btn-primary">Toggle Sort</button>
+      <p>{{ workshop.test }}</p>
+      <p class="lead">{{ workshop.uppercasedName }}</p>
 
-        <table class="table table-striped">
-          <tr ng-repeat="attendee in workshop.attendees
+      <input ng-model="query" class="form-control">
+      <button ng-click="reverse=!reverse" class="btn btn-primary">Toggle Sort</button>
+
+      <table class="table table-striped">
+        <tr ng-repeat="attendee in workshop.attendees
                          | filter:query
                          | orderBy:attendee:reverse">
-            <td>{{ attendee }}</td>
-          </tr>
-       </table>
-        {{ workshop.name }}
+          <td>{{ attendee }}</td>
+        </tr>
+      </table>
+      {{ workshop.name }}
 
-        <!-- E -->
-        <ws-directive
-          greeting="{{ workshop.test }}"
-          name="workshop.name"
-          shout="workshop.greet()">
-          <small>written by Gregor</small>
-        </ws-directive>
+      <!-- E -->
+      <ws-directive greeting="{{ workshop.test }}" name="workshop.name" shout="workshop.greet()">
+        <small>written by Gregor</small>
+      </ws-directive>
 
-        <!-- A -->
-        <!-- <div ws-directive
+      <!-- A -->
+      <!-- <div ws-directive
              greeting="{{ workshop.test }}"
              name="workshop.name"
              shout="workshop.greet()"></div> -->
-      </section>
 
-    </div>
+      <hr>
+
+      <ws-controller-directive
+        date="workshop.date"></ws-controller-directive>
+    </section>
+
+  </div>
 
 
-    <!-- Sample Scripts -->
-    <script src="./samples/workshop.module.js" charset="utf-8"></script>
-    <script src="./samples/workshop.controller.js" charset="utf-8"></script>
-    <script src="./samples/workshop.attendee.filter.js" charset="utf-8"></script>
-    <script src="./samples/workshop.factory.js" charset="utf-8"></script>
-    <script src="./samples/workshop.service.js" charset="utf-8"></script>
-    <script src="./samples/workshop.directive.js" charset="utf-8"></script>
-  </body>
+  <!-- Sample Scripts -->
+  <script src="./samples/workshop.module.js" charset="utf-8"></script>
+  <script src="./samples/workshop.controller.js" charset="utf-8"></script>
+  <script src="./samples/workshop.attendee.filter.js" charset="utf-8"></script>
+  <script src="./samples/workshop.factory.js" charset="utf-8"></script>
+  <script src="./samples/workshop.service.js" charset="utf-8"></script>
+  <script src="./samples/workshop.directive.js" charset="utf-8"></script>
+  <script src="./samples/workshop.controller.directive.js" charset="utf-8"></script>
+</body>
+
 </html>

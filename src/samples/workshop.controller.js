@@ -14,6 +14,8 @@
     vm.name = 'Gregor';
     vm.attendees = attendeesFactory.getAll();
     vm.firstAttendee = attendeesService.getFirst();
+    
+    vm.date = new Date();
 
     vm.expression = $interpolate('{{ name | uppercase }}');
     vm.uppercasedName = vm.expression({ name: vm.name });
