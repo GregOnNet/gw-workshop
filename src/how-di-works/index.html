@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script src="../../bower_components/angular/angular.js"></script>
+    <script type="text/javascript">
+
+      var Person = function(name) {
+        this.name = name;
+        this.greet = function() {
+          console.log('Hallo', this.name);
+        };
+      }
+
+      var me = new Person('Gregor');
+
+      var controller = function(person) {
+        person.greet();
+      }
+
+      controller(me);
+      console.info(controller.toString());
+      console.info(angular.injector().annotate(controller));
+
+    </script>
+
+  </body>
+</html>

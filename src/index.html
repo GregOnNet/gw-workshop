@@ -1,4 +1,5 @@
-<html ng-app="workshop">
+<html ng-app="workshop"
+      ng-strict-di>
   <head>
     <title>Learning AngularJS</title>
     <link rel="icon" href="../favicon.ico">
@@ -23,10 +24,10 @@
       <!-- Our Code goes here -->
       <section class="sample"
                ng-controller="workshopController as workshop">
-
+        
         <p>{{ workshop.test }}</p>
         <div>{{ workshop.attendees }}</div>
-        
+
       </section>
 
     </div>
