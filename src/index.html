@@ -22,19 +22,20 @@
     <div class="container">
 
       <!-- Our Code goes here -->
-      <section class="sample"
-               ng-controller="workshopController as workshop">
+      <section ng-controller="workshopController as workshop"
+               class="sample">
 
         <p>{{ workshop.test }}</p>
         <p class="lead">{{ workshop.uppercasedName }}</p>
 
-        <input class="form-control" ng-model="query">
+        <input ng-model="query" class="form-control">
+        <button ng-click="reverse=!reverse" class="btn btn-primary">Toggle Sort</button>
 
         <table class="table table-striped">
           <tr ng-repeat="attendee in workshop.attendees
-                         | filter:query
-                         | orderBy:attendee">
-            <td ng-controller="otherController as other"></td>
+                         | startsWith:query
+                         | orderBy:attendee:reverse">
+            <td>{{ attendee }}</td>
           </tr>
        </table>
 
@@ -46,5 +47,6 @@
     <!-- Sample Scripts -->
     <script src="./samples/workshop.module.js" charset="utf-8"></script>
     <script src="./samples/workshop.controller.js" charset="utf-8"></script>
+    <script src="./samples/workshop.attendee.filter.js" charset="utf-8"></script>
   </body>
 </html>
