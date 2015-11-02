@@ -8,13 +8,20 @@
   WorkshopController.$inject = ['$interpolate', 'attendeesFactory', 'attendeesService'];
 
   function WorkshopController($interpolate, attendeesFactory, attendeesService) {
+    var vm = this;
     // this -> Zugriff auf den Scope
-    this.test = 'Hallo Welt';
-    this.name = 'Gregor';
-    this.attendees = attendeesFactory.getAll();
-    this.firstAttendee = attendeesService.getFirst();
-    
-    this.expression = $interpolate('{{ name | uppercase }}');
-    this.uppercasedName = this.expression({ name: this.name });
+    vm.test = 'Hallo Welt';
+    vm.name = 'Gregor';
+    vm.attendees = attendeesFactory.getAll();
+    vm.firstAttendee = attendeesService.getFirst();
+
+    vm.expression = $interpolate('{{ name | uppercase }}');
+    vm.uppercasedName = vm.expression({ name: vm.name });
+
+    vm.greet = greet;
+
+    function greet() {
+        alert(vm.test + ' ' + vm.name)
+    }
   }
 }());

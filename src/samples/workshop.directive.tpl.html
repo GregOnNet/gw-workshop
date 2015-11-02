@@ -1,5 +1,21 @@
 <div>
   <p class="lead">Workshop Direktive</p>
-  <p>{{ workshop.test }}</p>
+  <!-- One Way Binding -->
+  <p>{{ greeting }}</p>
+
+
+  <!-- Two way binding -->
+  <div>
+    <input ng-model="name" class="form-control">
+    <small>{{ name }}</small>
+  </div>
+
+  <hr>
+
+  <button ng-click="greet()"
+          class="btn btn-info">Greet</button>
+
+  <hr>
+
   <ng-transclude></ng-transclude>
 </div>

@@ -10,7 +10,12 @@
     function wsDirective() {
       return {
         templateUrl: './samples/workshop.directive.tpl.html',
-        transclude: true
+        transclude: true,
+        scope: {
+          greeting: '@',
+          name: '=',
+          greet: '&shout'
+        },
       };
     }
 }());

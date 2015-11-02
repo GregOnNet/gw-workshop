@@ -38,11 +38,21 @@
             <td>{{ attendee }}</td>
           </tr>
        </table>
+        {{ workshop.name }}
 
-        <ws-directive>
+        <!-- E -->
+        <ws-directive
+          greeting="{{ workshop.test }}"
+          name="workshop.name"
+          shout="workshop.greet()">
           <small>written by Gregor</small>
         </ws-directive>
 
+        <!-- A -->
+        <!-- <div ws-directive
+             greeting="{{ workshop.test }}"
+             name="workshop.name"
+             shout="workshop.greet()"></div> -->
       </section>
 
     </div>
