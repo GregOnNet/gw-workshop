@@ -5,9 +5,11 @@
     .module('workshop')
     .controller('workshopController', WorkshopController);
 
-  WorkshopController.$inject = ['$interpolate', '$scope' , 'attendeesFactory', 'attendeesService'];
+  WorkshopController.$inject = ['$interpolate', '$scope', '$timeout', 'attendeesFactory', 'attendeesService'];
 
-  function WorkshopController($interpolate, $scope, attendeesFactory, attendeesService) {
+
+  // $interval, $timeout, $window
+  function WorkshopController($interpolate, $scope, $timeout, attendeesFactory, attendeesService) {
     var vm = this;
     // this -> Zugriff auf den Scope
     vm.test = 'Hallo Welt';
@@ -27,9 +29,12 @@
       // Listener Function
       function(newValue) {
         vm.uppercasedName = vm.expression({ name: newValue});
-      }
-    );
+      });
 
+    $timeout(function() {
+      vm.name = 'Matthias';
+      console.log('Ready');
+    }, 3000);
 
     vm.greet = greet;
 
