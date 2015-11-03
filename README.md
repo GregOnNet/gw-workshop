@@ -6,6 +6,7 @@ Nichts desto trotz ist es schwer zu lernen. Um AngularJS richtig einzusetzen, mu
 ## Lesenswert
 
 - [Token based authentication](http://code.tutsplus.com/tutorials/token-based-authentication-with-angularjs-nodejs--cms-22543)
+- [Unique Requests for Templates](http://stackoverflow.com/questions/14718826/angularjs-disable-partial-caching-on-dev-machine/30267216#30267216)
 
 ## Plugins
 

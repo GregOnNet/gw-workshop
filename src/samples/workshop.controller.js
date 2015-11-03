@@ -5,11 +5,16 @@
     .module('workshop')
     .controller('workshopController', WorkshopController);
 
-  WorkshopController.$inject = ['$interpolate', '$scope', '$timeout', 'attendeesFactory', 'attendeesService'];
+  WorkshopController.$inject = ['$interpolate', '$scope',
+    '$timeout', 'attendeesFactory', 'attendeesService',
+    'asyncService'];
 
 
   // $interval, $timeout, $window
-  function WorkshopController($interpolate, $scope, $timeout, attendeesFactory, attendeesService) {
+  function WorkshopController($interpolate, $scope,
+    $timeout, attendeesFactory, attendeesService,
+    asyncService) {
+
     var vm = this;
     // this -> Zugriff auf den Scope
     vm.test = 'Hallo Welt';
@@ -18,6 +23,10 @@
 
     vm.date = new Date();
 
+
+    asyncService.doAsync(true)
+      .then(function(response) { console.info(response); })
+      .catch(function(err) { console.error(err); });
 
 
     vm.name = 'Gregor';
