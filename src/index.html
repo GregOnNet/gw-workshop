@@ -24,8 +24,8 @@
     <!-- Our Code goes here -->
     <section ng-controller="workshopController as workshop" class="sample">
 
-      <p>{{ workshop.test }}</p>
-      <p class="lead">{{ workshop.uppercasedName }}</p>
+      <p>{{ ::workshop.test }}</p>
+      <p class="lead">{{ ::workshop.uppercasedName }}</p>
 
       <input ng-model="query" class="form-control">
       <button ng-click="reverse=!reverse" class="btn btn-primary">Toggle Sort</button>
@@ -37,7 +37,8 @@
           <td>{{ attendee }}</td>
         </tr>
       </table>
-      {{ workshop.name }}
+
+      <input ng-model="workshop.name" class="form-control">
 
       <!-- E -->
       <ws-directive greeting="{{ workshop.test }}" name="workshop.name" shout="workshop.greet()">
