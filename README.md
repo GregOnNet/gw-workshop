@@ -3,6 +3,10 @@
 AngularJS ist derzeit eines der modernsten Frameworks, um Web Anwendungen zu erstellen.
 Nichts desto trotz ist es schwer zu lernen. Um AngularJS richtig einzusetzen, muss man das Framework verstehen.
 
+## Lesenswert
+
+- [Token based authentication](http://code.tutsplus.com/tutorials/token-based-authentication-with-angularjs-nodejs--cms-22543)
+
 ## Plugins
 
 - [ng-inspector](https://chrome.google.com/webstore/detail/ng-inspector-for-angularj/aadgmnobpdmgmigaicncghmmoeflnamj)
