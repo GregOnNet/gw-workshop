@@ -3,7 +3,11 @@
 AngularJS ist derzeit eines der modernsten Frameworks, um Web Anwendungen zu erstellen.
 Nichts desto trotz ist es schwer zu lernen. Um AngularJS richtig einzusetzen, muss man das Framework verstehen.
 
-## Lesenswert
+## Lesens- & Sehenswert
+
+### Einstieg in Angular 2.0
+
+- [Developer Open Space Session](https://www.youtube.com/watch?v=ewxEFdMPMF0)
 
 ### Automatisierung mit gulp
 
