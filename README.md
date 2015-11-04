@@ -5,7 +5,14 @@ Nichts desto trotz ist es schwer zu lernen. Um AngularJS richtig einzusetzen, mu
 
 ## Lesenswert
 
+### Automatisierung mit gulp
+
+- [Gulp setup for AngularJS Projects](http://paislee.io/a-healthy-gulp-setup-for-angularjs-projects/)
+
+### Authentifizierung
 - [Token based authentication](http://code.tutsplus.com/tutorials/token-based-authentication-with-angularjs-nodejs--cms-22543)
+
+### Template Chaching
 - [Unique Requests for Templates](http://stackoverflow.com/questions/14718826/angularjs-disable-partial-caching-on-dev-machine/30267216#30267216)
 
 ## Plugins
